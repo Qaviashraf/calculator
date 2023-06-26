@@ -4,14 +4,14 @@ import "./comp.css";
 export const Buttons  = () => {
   const [num, setnum]= useState("")
   const [prev, setprev]= useState("")
-  const keypress = (e)=> {
+  const input = (e)=> {
     setnum(num.concat(e.target.innerText))
   }
 const clear = () => {
   setnum("")
   setprev("")
 }
-  const answer =()=>{
+  const result =()=>{
   setprev(num)
 try{
   setnum(eval(num).toString())
@@ -29,22 +29,22 @@ try{
           <input id="main-scrn" type="text" value={num} />
       </div> 
          <div className="buttons">
-            <button className="btn-num" onClick={keypress}>7 </button >
-            <button className="btn-num" onClick={keypress}>8</button>
-            <button className="btn-num" onClick={keypress}>9</button>
-            <button className="btn-op" onClick={keypress}>/</button>
-            <button className="btn-num" onClick={keypress}>4</button>
-            <button className="btn-num" onClick={keypress}>5</button>
-            <button className="btn-num" onClick={keypress}>6</button>
-            <button className="btn-op" onClick={keypress}>*</button>
-            <button className="btn-num" onClick={keypress}>1</button>
-            <button className="btn-num" onClick={keypress}>2</button>
-            <button className="btn-num" onClick={keypress}>3</button>
-            <button className="btn-op" onClick={keypress}>+</button>
-            <button className="btn-num" onClick={keypress}>.</button>
-            <button className="btn-num" onClick={keypress}>0</button>
-            <button className="btn-equal" id="equal" onClick={answer} >=</button>
-            <button className="btn-op" onClick={keypress}>-</button>
+            <button className="btn-num" onClick={input}>7 </button >
+            <button className="btn-num" onClick={input}>8</button>
+            <button className="btn-num" onClick={input}>9</button>
+            <button className="btn-op" onClick={input}>/</button>
+            <button className="btn-num" onClick={input}>4</button>
+            <button className="btn-num" onClick={input}>5</button>
+            <button className="btn-num" onClick={input}>6</button>
+            <button className="btn-op" onClick={input}>*</button>
+            <button className="btn-num" onClick={input}>1</button>
+            <button className="btn-num" onClick={input}>2</button>
+            <button className="btn-num" onClick={input}>3</button>
+            <button className="btn-op" onClick={input}>+</button>
+            <button className="btn-num" onClick={input}>.</button>
+            <button className="btn-num" onClick={input}>0</button>
+            <button className="btn-equal" id="equal" onClick={result} >=</button>
+            <button className="btn-op" onClick={input}>-</button>
           <button className="btn-clear" id="clear" onClick={clear}>clear</button> 
         </div>
       </div> 
